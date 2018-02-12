@@ -1,0 +1,19 @@
+{
+	"person":[
+		{
+			"Name":"John",
+			"Email":"John.Doe@gmail.com",
+			"Phone":"8524567531"
+		},
+		{
+			"Name":"Anna",
+			"Email":"Anna.Smith@gmail.com",
+			"Phone":"1478963258"
+		},
+		{
+			"Name":"Peter",
+			"Email":"Peter.John@gmail.com",
+			"Phone":"3698741259"
+		}
+	]
+}

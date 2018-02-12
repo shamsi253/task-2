@@ -1,0 +1,15 @@
+table
+{
+	width:100%;
+	 padding: 20px;
+	 border-collapse: collapse;
+	 border: 1px solid black;
+}
+
+
+td,th
+{ 
+	width:100%;
+	
+	 border: 1px solid black;
+}

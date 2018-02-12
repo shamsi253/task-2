@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Retrieve List</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
+    </head>
+<body>
+    <div class="container-fluid" style="background-color: white; font-size: 25px; font-style: bold; height: 600px;"><h>Details</h>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div id="display"></div>	
+                    <a href="#" class="btn btn-primary" id="retrieve">Retrieve List</a>
+                               
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+ 	<script type="text/javascript">
+     	 $('#retrieve').click(function () {
+            var display = $('#display');
+            table = '';
+            display.text('Loading data from JSON source...');
+	    	$.ajax({            
+	        	url: "./task.json",                       
+	        	success: function(response){
+
+	        		console.log(response);
+                    console.log(response['person']);
+                    // display.append("<table>");
+	        		// display.append("<tr><th>Name</th><th>Email</th><th>phone</th>");
+                    table += "<table><tr><th>Name</th><th>Email</th><th>phone</th>";
+                    response['person'].forEach(function (item) {
+                        console.log(item);
+                        // display.append("<tr><td>" + item.Name + "</td><td>" + item.Email + "</td><td>" + item.Phone + "</td></tr>");
+                        table += "<tr><td>" + item.Name + "</td><td>" + item.Email + "</td><td>" + item.Phone + "</td></tr>";
+                    })
+                    table += "</table>"
+                    display.append(table);
+                    
+        		}
+        	});
+		});
+	</script>
+</body>
+</html>

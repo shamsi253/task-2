@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+
+</head>
+<body>
+	<div class="container-fluid">
+            <div class="row">
+            	<div class="col-sm-4" style="background-color:white;"></div>
+                <div class="col-sm-4" style="background-color:grey;"> 
+                <h2>Registration Form</h2>
+                    <form action="success.html" name="registration" id="registration">
+                    	<div class="form-group">
+                            <label for="name">Title:</label>
+                            <input type="radio" name="title" id="r1" value="Mr" checked=""><label for="r1"  >Mr.</label>
+                            <input type="radio" name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
+                        </div>
+                    	<div class="form-group">
+                            <label for="name">Name:<span style="color: red">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name"  >
+
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:
+                            	<span style="color: red">*</span>
+                            </label>
+                        <input type="email" class="form-control" id="email" data-toggle="tooltip" title="Enter valid email Id" placeholder="Enter email" name="email" list="l1" >
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="usr">Phone no:
+                                <span style="color: red">*</span>      
+                            </label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone no:"  >
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea class="form-control" rows="3" id="comment" name="address" placeholder="Enter Address"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="usr">Designation:</label>
+                            <input type="text" class="form-control" id="designation" name="designation" placeholder="Enter name" >
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>    
+                <div class="col-sm-4" style="background-color:white;"></div>
+            </div>        
+    </div>
+    <script type="text/javascript">
+        $(document).ready( function () {
+        	$(":selected").css("background-color", "red");
+            $( "#registration" ).validate( {
+                rules: {
+                        name: {
+                                required:true,
+                                minlength:4
+                            },
+                        phone:{
+                                required:true,
+                                minlength:10
+                            },
+                        email:{
+                                required:true
+                            },     
+                },
+                messages: {
+                            name: "please enter name minimum 4 character",
+                            phone: "please enter 10 digit phone no:",
+                            email: "Please enter a valid email address"           
+                },
+            });
+        });
+    </script>
+</body>
+</html>

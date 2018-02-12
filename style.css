@@ -1,0 +1,28 @@
+body {
+  font: 1em sans-serif;
+}
+h2
+{
+	text-align: center;
+}
+
+form label.error
+{
+	color:red;
+	
+}
+
+form input.error
+{
+	border:1px solid red;
+	color:red;
+}
+.main
+{
+	width:600px;
+	margin: 0px;
+}
+abbr
+{
+	color:red;
+}
